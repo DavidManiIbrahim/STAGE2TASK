@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Trash2, ChevronLeft } from 'lucide-react';
 import { useInvoice } from '../contexts/InvoiceContext';
 import './InvoiceForm.css';
@@ -130,7 +131,7 @@ const InvoiceForm = ({ isOpen, onClose, invoiceToEdit }) => {
     onClose();
   };
 
-  return (
+  const modalContent = (
     <div className="form-overlay animate-fade-in">
       <div className="form-container">
         <button className="back-link mobile-only" onClick={onClose}>
@@ -275,6 +276,8 @@ const InvoiceForm = ({ isOpen, onClose, invoiceToEdit }) => {
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 };
 
 export default InvoiceForm;

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import './DeleteModal.css';
 
 const DeleteModal = ({ isOpen, onClose, onConfirm, invoiceId }) => {
@@ -32,7 +33,7 @@ const DeleteModal = ({ isOpen, onClose, onConfirm, invoiceId }) => {
 
   if (!isOpen) return null;
 
-  return (
+  const modalContent = (
     <div className="modal-overlay">
       <div 
         className="modal-content animate-fade-in" 
@@ -52,6 +53,8 @@ const DeleteModal = ({ isOpen, onClose, onConfirm, invoiceId }) => {
       </div>
     </div>
   );
+
+  return createPortal(modalContent, document.body);
 };
 
 export default DeleteModal;

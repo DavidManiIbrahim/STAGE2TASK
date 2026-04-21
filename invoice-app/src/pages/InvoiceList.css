@@ -1,0 +1,177 @@
+.invoice-list-page {
+  width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .page-header {
+    margin-bottom: 56px;
+  }
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-bold {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.hash {
+  color: #7e88c3;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+@media (min-width: 768px) {
+  .header-actions {
+    gap: 40px;
+  }
+}
+
+.new-invoice-btn {
+  padding: 6px 14px 6px 6px;
+}
+
+@media (min-width: 768px) {
+  .new-invoice-btn {
+    padding: 8px 16px 8px 8px;
+  }
+}
+
+.btn-icon {
+  background-color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.empty-img {
+  width: 192px;
+  margin-bottom: 40px;
+}
+
+.empty-state h2 {
+  margin-bottom: 24px;
+}
+
+.empty-state p {
+  line-height: 15px;
+}
+
+/* Invoice Card */
+.invoice-card {
+  background-color: var(--color-surface);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 8px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.invoice-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.invoice-id {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.invoice-name {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: right;
+}
+
+.invoice-date {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 16px;
+}
+
+.invoice-total {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.invoice-status {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.chevron-icon {
+  display: none;
+}
+
+/* Desktop Invoice Card */
+@media (min-width: 768px) {
+  .invoice-card {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+  }
+  
+  .invoice-id {
+    flex: 1;
+  }
+  
+  .invoice-date {
+    flex: 1;
+    margin-top: 0;
+  }
+  
+  .invoice-name {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .invoice-total {
+    flex: 1;
+    text-align: right;
+    padding-right: 40px;
+  }
+  
+  .invoice-status {
+    width: 104px;
+  }
+
+  .chevron-icon {
+    display: block;
+    margin-left: 20px;
+  }
+}

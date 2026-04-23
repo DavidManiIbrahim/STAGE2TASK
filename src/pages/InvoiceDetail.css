@@ -54,6 +54,16 @@
   gap: 8px;
 }
 
+.action-buttons .btn {
+  padding: 10px 18px;
+}
+
+@media (min-width: 768px) {
+  .action-buttons .btn {
+    padding: 12px 24px;
+  }
+}
+
 .mobile-only {
   display: flex;
   background-color: var(--color-surface);

@@ -3,12 +3,19 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 104px;
-  height: 40px;
+  width: 90px;
+  height: 32px;
   border-radius: 6px;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: -0.1px;
+}
+
+@media (min-width: 768px) {
+  .status-badge {
+    width: 104px;
+    height: 40px;
+  }
 }
 
 .status-dot {
